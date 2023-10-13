@@ -1,0 +1,70 @@
+.swiper_container {
+  height: 375rpx;
+  width: 750rpx;
+
+  .swiper_item {
+    .swiper_nav {
+      .swiper_img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// 商品大类
+.bigType_container {
+  padding-top: 20rpx;
+  background-color: #F7F7F7;
+
+  .bigTypeRow {
+    display: flex;
+
+    .bigType_nav {
+      flex: 1;
+
+      .bigType_img {
+        // 总宽度为750rpx，划分5份就是 150rpx
+        width: 150rpx;
+      }
+    }
+  }
+}
+
+// 热卖推荐
+.hotProduct_container {
+  .hotProduct_title {
+    font-size: 32rpx;
+    font-weight: 600;
+    padding: 20rpx;
+    color: var(--themeColor);
+    background-color: #E0E0E0;
+  }
+
+  .hotProduct_list {
+    display: flex;
+    flex-wrap: wrap;
+
+    .hotProduct_detail {
+      margin: 15rpx;
+      width: 46%;
+      text-align: center;
+
+      .hotProduct_nav {
+        .hotProduct_img {
+          width: 100%;
+          background-color: #F5F5F5;
+        }
+
+        .hotProduct_name {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .hotProduct_price {
+          color: var(--themeColor);
+        }
+      }
+    }
+  }
+}

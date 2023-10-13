@@ -1,0 +1,61 @@
+<view>
+  <!-- 搜索开始 -->
+  <SearchBar></SearchBar>
+  <!-- 搜索结束 -->
+
+  <!-- 轮播图开始 -->
+  <swiper circular indicator-dots autoplay class="swiper_container">
+    <swiper-item class="swiper_item" wx:for="{{swiperList}}" wx:for-item="swiper" wx:key="id">
+      <navigator class="swiper_nav" url="/pages/product_detail/index?id={{swiper.id}}">
+        <image class="swiper_img" mode="widthFix" src="{{baseUrl+'/image/swiper/'+swiper.swiperPic}}"></image>
+      </navigator>
+    </swiper-item>
+  </swiper>
+  <!-- 轮播图结束 -->
+  <!-- 商品大类开始 -->
+  <view class="bigType_container">
+  <!-- 第一行 -->
+    <view class="bigTypeRow">
+      <navigator class="bigType_nav" url="/pages/category/index"
+      bindtap="handleTypeJump"
+      data-index="{{index}}"
+      wx:for="{{bigTypeList_row1}}" wx:for-item="bigType"
+      wx:key="id">
+        <image  class="bigType_img" src="{{baseUrl+'/image/bigType/'+bigType.image}}" mode="widthFix" />
+      </navigator>
+    </view>
+    <!-- 第二行 -->
+    <view class="bigTypeRow">
+      <navigator class="bigType_nav" url="/pages/category/index"
+      bindtap="handleTypeJump"
+      data-index="{{index+5}}" 
+      wx:for="{{bigTypeList_row2}}" wx:for-item="bigType"
+      wx:key="id">
+        <image  class="bigType_img" src="{{baseUrl+'/image/bigType/'+bigType.image}}" mode="widthFix" />
+      </navigator>
+    </view>
+  </view>
+  <!-- 商品大类结束 -->
+
+<!-- 商品热卖推荐 开始 -->
+<view class="hotProduct_container">
+ <view class="hotProduct_title">热卖推荐</view>
+ <view class="hotProduct_list">
+ <view class="hotProduct_detail"
+ wx:for="{{hotProductList}}"
+ wx:for-item="hotProduct"
+ wx:key="id">
+ <navigator class="hotProduct_nav" url="/pages/product_detail/index?id={{hotProduct.id}}">
+  <image  class="hotProduct_img" src="{{baseUrl+'/image/product/'+ hotProduct.proPic}}" mode="widthFix" />
+  <view class="hotProduct_name">{{hotProduct.name}}</view>
+  <view class="hotProduct_price">￥ {{hotProduct.price}}</view>
+  <button type="warn" size="mini">立即购买</button>
+ </navigator>
+ 
+ </view>
+
+ </view>
+</view>
+<!-- 商品热卖推荐 结束 -->
+
+</view>
